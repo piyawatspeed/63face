@@ -1,9 +1,9 @@
 const video = document.getElementById("video");
 
 Promise.all([
-  faceapi.nets.ssdMobilenetv1.loadFromUri("/models"),
-  faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
-  faceapi.nets.faceLandmark68Net.loadFromUri("/models"),
+  faceapi.nets.ssdMobilenetv1.loadFromUri("../models"),
+  faceapi.nets.faceRecognitionNet.loadFromUri("../models"),
+  faceapi.nets.faceLandmark68Net.loadFromUri("../models"),
 ]).then(startWebcam);
 
 function startWebcam() {
@@ -21,7 +21,7 @@ function startWebcam() {
 }
 
 function getLabeledFaceDescriptions() {
-  const labels = ["Felipe", "Messi", "Data"];
+  const labels = ["za"];
   return Promise.all(
     labels.map(async (label) => {
       const descriptions = [];
