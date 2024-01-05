@@ -1,9 +1,9 @@
 const video = document.getElementById("video");
 
 Promise.all([
-  faceapi.nets.ssdMobilenetv1.loadFromUri("../models"),
-  faceapi.nets.faceRecognitionNet.loadFromUri("../models"),
-  faceapi.nets.faceLandmark68Net.loadFromUri("../models"),
+  faceapi.nets.ssdMobilenetv1.loadFromUri("https://piyawatspeed.github.io/63face/models"),
+  faceapi.nets.faceRecognitionNet.loadFromUri("https://piyawatspeed.github.io/63face/models"),
+  faceapi.nets.faceLandmark68Net.loadFromUri("https://piyawatspeed.github.io/63face/models"),
 ]).then(startWebcam);
 
 function startWebcam() {
@@ -26,7 +26,7 @@ function getLabeledFaceDescriptions() {
     labels.map(async (label) => {
       const descriptions = [];
       for (let i = 1; i <= 2; i++) {
-        const img = await faceapi.fetchImage(`./labels/${label}/${i}.png`);
+        const img = await faceapi.fetchImage(`https://piyawatspeed.github.io/63face/labels/${label}/${i}.png`);
         const detections = await faceapi
           .detectSingleFace(img)
           .withFaceLandmarks()
